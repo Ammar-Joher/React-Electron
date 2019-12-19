@@ -3,8 +3,8 @@ import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
-const API = 'http://localhost:8000/api/test';
-const DEFAULT_QUERY = '';
+const API = 'http://localhost:8000/api/test?query=';
+const DEFAULT_QUERY = 'redux';
 
 class App extends Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class App extends Component {
 
   render() {
     const { hits } = this.state;
+    console.log(hits)
     return (
       <div className="App">
         <header className="App-header">
@@ -38,11 +39,11 @@ class App extends Component {
             Learn react
           </a>
           <ul>
-        {hits.map(hit =>
+        {/* {hits.map(hit =>
             <li key={hit.objectID}>
               <a href={hit.url}>{hit.title}</a>
             </li>
-          )}
+          )} */}
         </ul>
         </header>
       </div>
